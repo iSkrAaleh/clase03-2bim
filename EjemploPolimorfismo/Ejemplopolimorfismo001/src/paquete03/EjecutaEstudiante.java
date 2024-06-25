@@ -1,6 +1,6 @@
 
 package paquete03;
-
+import java.util.Locale;
 import java.util.Scanner;
 
 /**
@@ -13,7 +13,9 @@ public class EjecutaEstudiante {
 
         // Se declaran variables
         // a.  Declarar Variables
-        Scanner entrada = new Scanner(System.in);
+      
+        Scanner scanner = new Scanner(System.in);
+        scanner.usLocale(Locale.US);
         String nombresEst;
         String apellidosEst;
         String identificacionEst;
@@ -36,20 +38,20 @@ public class EjecutaEstudiante {
                     + "Ingrese (2) para Estudiante Distancia");
             // se captura el valor ingresado por el usuario en 
             // la variable tipoEstudiante
-            tipoEstudiante = entrada.nextInt();
-            entrada.nextLine();
+            tipoEstudiante = scanner.nextInt();
+            scanner.nextLine();
             // Solicitar el ingreso de valores para las variables
 
             // Solicitar nombresEst, apellidosEst, identificacionEst, edadEst
             // Leer nombresEst, apellidosEst, identificacionEst, edadEst
             System.out.println("Ingrese los nombres del estudiante");
-            nombresEst = entrada.nextLine();
+            nombresEst = scanner.nextLine();
             System.out.println("Ingrese los apellidos del estudiante");
-            apellidosEst = entrada.nextLine();
+            apellidosEst = scanner.nextLine();
             System.out.println("Ingrese la identificación del estudiante");
-            identificacionEst = entrada.nextLine();
+            identificacionEst = scanner.nextLine();
             System.out.println("Ingrese la edad del estudiante");
-            edadEst = entrada.nextInt();
+            edadEst = scanner.nextInt();
 
             if (tipoEstudiante == 1) {
 
@@ -59,9 +61,9 @@ public class EjecutaEstudiante {
                 // Solicitar numeroCreds, costoCred
                 // Leer numeroCreds, costoCred
                 System.out.println("Ingrese el número de créditos");
-                numeroCreds = entrada.nextInt();
+                numeroCreds = scanner.nextInt();
                 System.out.println("Ingrese el costo de cada créditos");
-                costoCred = entrada.nextDouble();
+                costoCred = scanner.nextDouble();
                 // se hace uso de los métodos establecer para asignar valores
                 // a los datos (atributos) del objeto
                 estudianteP.establecerNombresEstudiante(nombresEst);
@@ -102,9 +104,9 @@ public class EjecutaEstudiante {
                     // Solicitar numeroAsigs, costoAsig 
                     // Leer numeroAsigs, costoAsig
                     System.out.println("Ingrese el número de asignaturas");
-                    numeroAsigs = entrada.nextInt();
+                    numeroAsigs = scanner.nextInt();
                     System.out.println("Ingrese el costo de cada cada asignatura");
-                    costoAsig = entrada.nextDouble();
+                    costoAsig = scanner.nextDouble();
 
                     // se hace uso de los métodos establecer para asignar valores
                     // a los datos (atributos) del objeto
@@ -140,7 +142,7 @@ public class EjecutaEstudiante {
                 }
             }
 
-            entrada.nextLine();
+            scanner.nextLine();
             // Se pregunta si se desea ingresar más estudiante
             System.out.println("Desea ingresar más estudiante. Digite la "
                     + "letra S para continuar o digite la letra N para salir "
@@ -148,7 +150,7 @@ public class EjecutaEstudiante {
 
             // se captura el valor ingresado por el usuario para la variable 
             // continuar
-            continuar = entrada.nextLine();
+            continuar = scanner.nextLine();
             // se pregunta si el valor continuar es igual al valor "S", se sigue en 
             // ciclo repetitivo; si el valor es distinto de "S", se sale del ciclo
             // repetitivo
